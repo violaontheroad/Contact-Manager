@@ -15,31 +15,30 @@ let ContactList = () => {
     useEffect( () => { 
         async function fetchData(){
         try {
-            // setState({...state, loading:true});
+            setState({...state, loading:true});
             let response = await ContactService.getAllContacts();
-            console.log(response.data)
-            // setState({
-            //     ...state,
-            //     loading: false,
-            //     contacts: response.data
-            // });
+            setState({
+                ...state,
+                loading: false,
+                contacts: response.data
+            });
         }
         catch (error) {
-            // setState({
-            //     ...state,
-            //     loading:false,
-            //     errorMessage: error.message
-            // });
+            setState({
+                ...state,
+                loading:false,
+                errorMessage: error.message
+            });
         }
     }
     fetchData();
     } , []);
     
-    // let{loading, contacts, errorMessage} = state;
+    let{loading, contacts, errorMessage} = state;
 
     return(
         <React.Fragment>
-            {/* <pre>{JSON.stringify(contacts)}</pre> */}
+            <pre>{JSON.stringify(contacts)}</pre>
             <section className="contact-search p-3">
                 <div className="container">
                     <div className="grid">
