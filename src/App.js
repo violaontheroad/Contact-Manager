@@ -11,7 +11,6 @@ import Spinner from './components/spinner/spinner';
 let App = () => {
   return (
    <React.Fragment>
-    <Spinner/>
     <NavBar/>
     <Routes>
       <Route path={'/'} element={<Navigate to={'/contacts/list'}/>}/>
